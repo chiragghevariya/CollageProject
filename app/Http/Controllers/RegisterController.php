@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Faculty;
 use App\Student;
 use App\User;
 use Illuminate\Http\Request;
@@ -20,6 +21,12 @@ class RegisterController extends Controller
 
     }
 
+    public function getFacultyRegister(){
+
+        return view('loginAndREgister.all-register.faculty');
+
+    }
+
     public function studentRegister(Request $request){
 
         $user =new User();
@@ -31,10 +38,34 @@ class RegisterController extends Controller
         $user->save();
 
         $student =new Student();
+        $student->user_id =$user->id;
         $student->Enrollment =$request->enroll;
         $student->save();
 
         return "success full";
 
     }
+
+
+    public function facultyRegister(Request $request){
+
+        $user =new User();
+        $user->name =$request->name;
+        $user->email =$request->email;
+        $user->phone =$request->phone;
+        $user->address =$request->address;
+        $user->password =bcrypt($request->password);
+        $user->save();
+
+        $faculty =new Faculty();
+        $faculty->user_id =$user->id;
+        $faculty->info =$request->info;
+        $faculty->save();
+
+        return "success full";
+
+    }
+
+
+
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAddressIntoUserTable extends Migration
+class AddInformationIntoFaculty extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateAddressIntoUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('address')->after('phone');
+        Schema::table('faculties', function (Blueprint $table) {
+            $table->string('info')->after('id');
         });
     }
 
@@ -25,9 +25,8 @@ class CreateAddressIntoUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-
-            $table->dropColumn('address');
+        Schema::table('faculties', function (Blueprint $table) {
+            $table->dropColumn('info');
         });
     }
 }

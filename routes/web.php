@@ -26,3 +26,4 @@ Route::post('register/student',['as'=>'student.login','uses'=>'RegisterControlle
 
 
 Route::get('register/faculty',['uses'=>'RegisterController@getFacultyRegister']);
+Route::post('register/faculty',['as'=>'faculty.login','uses'=>'RegisterController@facultyRegister']);

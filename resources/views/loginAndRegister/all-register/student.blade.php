@@ -6,7 +6,9 @@
 
 <div class="container">
 
-    <h2>For Student Register Apply Here</h2>
+    <button class="btn btn-default pull-right back"><a href="{{url('getregistration')}}">Back</a></button>
+
+    <h2 style="padding:2em;">For Student Register Apply Here</h2>
 
     <form method="post" action="{{Route('student.login')}}">
 
@@ -50,7 +52,10 @@
 
         </div>
 
+
         <input type="submit" class="btn btn-success" value="submit">
+        <button class="btn btn-danger"><a href="{{url('/')}}">Calcle</a></button>
+
 
     </form>
 
