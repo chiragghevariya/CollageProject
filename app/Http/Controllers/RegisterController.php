@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,14 @@ class RegisterController extends Controller
         $user =new User();
         $user->name =$request->name;
         $user->email =$request->email;
+        $user->phone =$request->phone;
+        $user->address =$request->address;
         $user->password =bcrypt($request->password);
         $user->save();
+
+        $student =new Student();
+        $student->Enrollment =$request->enroll;
+        $student->save();
 
         return "success full";
 
