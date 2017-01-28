@@ -20,7 +20,7 @@
                        <div class="col-md-3">
 
                        <label for="Username">Email Id:</label>
-                       <input type="email" class="form-control" name="username">
+                       <input type="email" class="form-control" name="email">
 
                        </div>
 
@@ -31,7 +31,10 @@
 
             <div class="row">
 
-                <div class="form-group">
+
+
+
+                    <div class="form-group">
 
                         <div class="col-md-3">
 
@@ -40,13 +43,13 @@
 
                         </div>
 
-                </div>
+                    </div>
 
             </div>
 
             <div style="margin-top: 1em; ">
 
-                <button type="submit" class="btn btn-default">Submit</button>
+                <input type="submit" class="btn btn-default" value="Login">
 
             </div>
 

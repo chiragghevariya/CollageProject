@@ -21,6 +21,8 @@ Route::get('getlogin',['uses'=> 'loginController@getlogin']);
 Route::get('getregistration',['uses' =>'RegisterController@getRegister']);
 
 
-Route::get('register/student',['uses'=>'RegisterController@studentregister']);
+Route::get('register/student',['uses'=>'RegisterController@getStudentRegister']);
+Route::post('register/student',['as'=>'student.login','uses'=>'RegisterController@studentRegister']);
 
-Route::get('register/faculty',['uses'=>'RegisterController@facultyregister']);
+
+Route::get('register/faculty',['uses'=>'RegisterController@getFacultyRegister']);
