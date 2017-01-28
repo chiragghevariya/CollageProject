@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('layout.welcome');
 });
+
+
+Route::get('getlogin',['uses'=> 'loginController@getlogin']);
+
+//Route::resource('register','RegisterController');
+
+//Route::get('login',function (){
+//
+//   return view('loginAndRegister.auth.login');
+//});
