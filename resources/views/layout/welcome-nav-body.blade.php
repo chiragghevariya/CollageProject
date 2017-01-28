@@ -7,7 +7,7 @@
         <ul class="nav navbar-nav pull-right">
 
             <li ><a href="{{url('getlogin')}}">Login</a></li>
-            <li ><a href="#">Register</a></li>
+            <li ><a href="{{url('getregistration')}}">Register</a></li>
 
         </ul>
     </div>

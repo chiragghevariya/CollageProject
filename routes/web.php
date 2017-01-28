@@ -18,9 +18,9 @@ Route::get('/', function () {
 
 Route::get('getlogin',['uses'=> 'loginController@getlogin']);
 
-//Route::resource('register','RegisterController');
+Route::get('getregistration',['uses' =>'RegisterController@getRegister']);
 
-//Route::get('login',function (){
-//
-//   return view('loginAndRegister.auth.login');
-//});
+
+Route::get('register/student',['uses'=>'RegisterController@studentregister']);
+
+Route::get('register/faculty',['uses'=>'RegisterController@facultyregister']);
