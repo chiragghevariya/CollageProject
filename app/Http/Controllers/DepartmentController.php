@@ -63,7 +63,8 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $deptedit =Department::find($id);
+        return view('all-section.admin.department.edit',['deptedit'=>$deptedit]);
     }
 
     /**
@@ -75,7 +76,10 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $department= Department::find($id);
+        $department->name =$request->department;
+        $department->save();
+        return redirect()->to(Route('department.index'));
     }
 
     /**
@@ -86,6 +90,10 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $deptdelete =Department::find($id);
+        $deptdelete->delete();
+        return redirect()->to(Route('department.index'));
+
     }
 }
