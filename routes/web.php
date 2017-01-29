@@ -37,7 +37,7 @@ Route::post('register/faculty',['as'=>'faculty.login','uses'=>'RegisterControlle
 
 Route::get('admin-home',function (){
 
-    return view('all-section.admin.index');
+    return view('all-section.admin.home');
 });
 
 

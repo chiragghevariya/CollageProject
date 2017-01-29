@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>@yield('title')</title>
+    <title>@yield('title')</title>
     @include('layout.head')
 </head>
 <body>
 
 
 
-    <nav class="navbar nav-justified for-nav">
+        <nav class="navbar nav-justified navbar-fixed-top for-nav">
 
 
             <div class="navbar-header">
@@ -29,11 +29,11 @@
             </ul>
 
 
-    </nav>
-
-@include('all-section.admin.admin-body-block')
+        </nav>
 
 
+
+            @yield('content')
 
 </body>
 </html>
