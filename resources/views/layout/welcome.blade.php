@@ -11,5 +11,7 @@
 @include('layout.welcome-nav-body')
 @yield('content')
 
+
+
 </body>
 </html>

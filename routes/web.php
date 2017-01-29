@@ -11,6 +11,8 @@
 |
 */
 
+//*********   Login and Registration of student and faculty or HOD  ***********************
+
 Route::get('/', function () {
     return view('layout.welcome');
 });
@@ -27,3 +29,37 @@ Route::post('register/student',['as'=>'student.login','uses'=>'RegisterControlle
 
 Route::get('register/faculty',['uses'=>'RegisterController@getFacultyRegister']);
 Route::post('register/faculty',['as'=>'faculty.login','uses'=>'RegisterController@facultyRegister']);
+
+
+
+//************ Admin section with Create department ***********************************************
+
+
+Route::get('admin-home',function (){
+
+    return view('all-section.admin.index');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -23,18 +23,18 @@
         <div class="form-group">
 
             <label for="Email">Email</label>
-            <input type="email" class="form-control" name="email" placeholder="Your Email Id">
+            <input type="email" class="form-control" name="email" placeholder="xyz@gmail.com">
 
         </div>
 
         <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="text" class="form-control" name="phone" placeholder="Your phone Number" maxlength="10">
+            <input type="text" class="form-control" name="phone" placeholder="+91" maxlength="10">
         </div>
 
         <div class="form-group">
             <label for="Enroll">Enroll</label>
-            <input type="text" maxlength="13" name="enroll" class="form-control" placeholder="Enter your Enrollment Number">
+            <input type="text" maxlength="12" name="enroll" class="form-control" placeholder="Enter your Enrollment Number">
         </div>
 
         <div class="form-group">
