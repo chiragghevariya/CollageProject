@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 
 class DepartmentController extends Controller
 {
@@ -13,7 +15,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $department =Department::all();
+        return view('all-section.admin.department.index',['department'=>$department]);
     }
 
     /**
@@ -23,7 +26,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('all-section.admin.department.create');
     }
 
     /**
@@ -34,7 +37,11 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $department =new Department();
+        $department->name =$request->department;
+        $department->save();
+
+        return redirect()->to(Route('department.index'));
     }
 
     /**

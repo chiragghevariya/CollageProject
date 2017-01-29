@@ -40,6 +40,7 @@ Route::get('admin-home',function (){
     return view('all-section.admin.home');
 });
 
+Route::resource('admin/department','DepartmentController');
 
 
 

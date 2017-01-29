@@ -12,18 +12,18 @@
 
 
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><span><i class="fa fa-home" aria-hidden="true"></i></span>Home</a>
+                <a class="navbar-brand" href="{{url('admin-home')}}"><span><i class="fa fa-home" aria-hidden="true"></i></span>Home</a>
             </div>
 
             <ul class="nav navbar-nav">
 
-                <li><a href="#"><span><i class="fa fa-building-o" aria-hidden="true"></i></span>Department</a></li>
+                <li><a href="{{Route('department.index')}}"><span><i class="fa fa-building-o" aria-hidden="true"></i></span>Department</a></li>
 
 
             </ul>
 
             <ul class="nav navbar-nav pull-right">
-                <li><a href="#"><span><i class="fa fa-plus" aria-hidden="true"></i></span>Create Department</a></li>
+                <li><a href="{{Route('department.create')}}"><span><i class="fa fa-plus" aria-hidden="true"></i></span>Create Department</a></li>
                 <li><a href="#" class="pull-right"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
 
             </ul>
