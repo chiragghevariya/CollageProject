@@ -13,7 +13,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        return view('all-section.HOD.subject-assign.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('all-section.HOD.subject-assign.create');
     }
 
     /**
