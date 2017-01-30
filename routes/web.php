@@ -61,11 +61,6 @@ Route::resource('faculty/lecture','LectureController');
 
 
 
-Route::get('hod-home',function (){
-
-    return view('all-section.HOD.home');
-});
-
 Route::resource('faculty/subject','SubjectController');
 
 

@@ -1,4 +1,4 @@
-@extends('all-section.HOD.index')
+@extends('all-section.faculty.index')
 
 
 
@@ -14,7 +14,7 @@
 
         </div>
 
-        <div class="subject-form">
+        <div>
 
             <form >
 

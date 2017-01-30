@@ -31,6 +31,8 @@
                         <li><a href="{{Route('lecture.index')}}">Lecture</a></li>
                         <li><a href="{{Route('post.index')}}">Post</a></li>
                         <li><a href="#">Assignment</a></li>
+                        <li><a href="{{Route('subject.index')}}">Subject</a></li>
+                        <li><a href="">Verify User</a></li>
 
                     </ul>
 
