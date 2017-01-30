@@ -43,9 +43,16 @@ Route::get('admin-home',function (){
 Route::resource('admin/department','DepartmentController');
 
 
+//***********Faculty section *****************************************8
 
 
+Route::get('faculty-home',function (){
 
+    return view('all-section.faculty.index');
+
+});
+
+Route::resource('faculty/post','');
 
 
 

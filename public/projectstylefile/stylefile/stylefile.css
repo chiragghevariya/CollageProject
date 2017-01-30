@@ -69,17 +69,20 @@
 
     margin-top: 10em;
 
+
 }
 
 .tableinfo{
 
     width: 100%;
+
     table-border-color-light: black;
 }
 
+#tttt{
 
-
-
+    background-color: #2e6da4;
+}
 
 
 

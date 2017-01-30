@@ -1,0 +1,25 @@
+body{
+
+    overflow: hidden;
+    background:#FFF8E1;
+    width: 100%;
+}
+
+.for-faculty{
+
+    background:#651FFF;
+}
+
+.for-faculty ul li a{
+
+    color:black;
+}
+.for-faculty a{
+
+    color:black;
+}
+
+
+
+
+
