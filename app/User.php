@@ -41,4 +41,9 @@ class User extends Authenticatable
         return $this->belongsTo('App\Faculty');
 
     }
+
+//    public function department(){
+//
+//        $this->belongsTo('App\Department');
+//    }
 }

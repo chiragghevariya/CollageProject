@@ -38,6 +38,19 @@
         </div>
 
         <div class="form-group">
+
+            <select name="department_id" class="form-control">
+
+                @foreach($department as $department)
+                <option value="{{$department->id}}">{{$department->name}}</option>
+
+                @endforeach
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
             <label for="address">Address</label>
             {{--<input type="text" name="address" class="form-control" placeholder="Enter Your address">--}}
 

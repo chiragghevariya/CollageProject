@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use App\Faculty;
 use App\Student;
 use App\User;
@@ -12,12 +13,14 @@ class RegisterController extends Controller
 
     public function getRegister(){
 
+
         return view('loginAndRegister.auth.register-select');
     }
 
     public function getStudentRegister(){
 
-        return view('loginAndREgister.all-register.student');
+        $department =Department::all();
+        return view('loginAndREgister.all-register.student',['department'=>$department]);
 
     }
 
@@ -34,6 +37,7 @@ class RegisterController extends Controller
         $user->email =$request->email;
         $user->phone =$request->phone;
         $user->address =$request->address;
+        $user->department_id =$request->department_id;
         $user->role =3;
 //        3.Student
         $user->password =bcrypt($request->password);
