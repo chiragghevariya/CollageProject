@@ -26,7 +26,8 @@ class RegisterController extends Controller
 
     public function getFacultyRegister(){
 
-        return view('loginAndREgister.all-register.faculty');
+        $department =Department::all();
+        return view('loginAndREgister.all-register.faculty',['department'=>$department]);
 
     }
 
@@ -59,6 +60,7 @@ class RegisterController extends Controller
         $user->name =$request->name;
         $user->email =$request->email;
         $user->phone =$request->phone;
+        $user->department_id =$request->department_id;
         $user->address =$request->address;
         $user->role =2;
 //        2. faculty
