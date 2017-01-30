@@ -34,6 +34,8 @@ class RegisterController extends Controller
         $user->email =$request->email;
         $user->phone =$request->phone;
         $user->address =$request->address;
+        $user->role =3;
+//        3.Student
         $user->password =bcrypt($request->password);
         $user->save();
 
@@ -54,6 +56,8 @@ class RegisterController extends Controller
         $user->email =$request->email;
         $user->phone =$request->phone;
         $user->address =$request->address;
+        $user->role =2;
+//        2. faculty
         $user->password =bcrypt($request->password);
         $user->save();
 
