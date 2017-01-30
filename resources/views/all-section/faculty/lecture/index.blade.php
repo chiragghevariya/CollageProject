@@ -23,6 +23,7 @@
                     <th>Id</th>
                     <th>Lecture Title</th>
                     <th>Subject</th>
+                    <th>Created Date</th>
                     <th>Info</th>
                     <th>Edit</th>
                     <th>Delete</th>

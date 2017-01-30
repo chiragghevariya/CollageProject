@@ -21,7 +21,7 @@
 
                 <div class="row">
 
-                    <div class="col-md-5">
+                    <div class="col-md-4">
 
                         <div class="form-group">
 
@@ -32,7 +32,7 @@
 
                     </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-3">
 
                             <div class="form-group">
 
@@ -45,9 +45,19 @@
 
                         </div>
 
+                        <div class="col-md-3">
 
+                            <div class="form-group">
+
+                                <label for="Title">Date:</label>
+                                <input type="date" class="form-control" name="date">
+
+                            </div>
 
                     </div>
+
+
+                </div>
 
 
 
