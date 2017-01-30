@@ -49,12 +49,15 @@ Route::resource('admin/department','DepartmentController');
 
 Route::get('faculty-home',function (){
 
-    return view('all-section.faculty.index');
+    return view('all-section.faculty.home');
 
 });
 
 
 Route::resource('faculty/post','PostController');
+
+Route::resource('faculty/lecture','LectureController');
+
 
 
 

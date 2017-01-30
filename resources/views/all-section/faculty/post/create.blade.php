@@ -6,6 +6,12 @@
 
     <div class="container">
 
+        <div style="margin-top: 5em">
+
+            <a href="{{Route('post.index')}}" class="btn btn-primary pull-right"><span style="margin-right: 1em"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>Back</a>
+
+        </div>
+
         <div class="post-form">
 
             <form >
@@ -43,8 +49,8 @@
                 </div>
 
 
-                <input type="submit" value="create post" class="btn btn-primary">
-                <a class="btn btn-danger" style="margin-left: 1em">Cancle</a>
+                        <input type="submit" value="create post" class="btn btn-primary">
+                        <a class="btn btn-danger" style="margin-left: 1em" href="{{Route('post.index')}}">Cancle</a>
 
             </form>
 

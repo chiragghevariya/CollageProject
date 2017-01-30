@@ -17,33 +17,36 @@
 
 
 
-<nav class="navbar navbar-fixed-top for-faculty">
+                <nav class="navbar navbar-fixed-top for-faculty">
 
 
-    <div class="navbar-header ">
+                    <div class="navbar-header ">
 
-        <a class="navbar-brand" href="{{url('faculty-home')}}"><span><i class="fa fa-home fa" aria-hidden="true"></i></span>Home</a>
+                        <a class="navbar-brand" href="{{url('faculty-home')}}"><span><i class="fa fa-home fa" aria-hidden="true"></i></span>Home</a>
 
-    </div>
+                    </div>
 
-    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav">
 
-        <li><a href="#">Lecture</a></li>
-        <li><a href="{{Route('post.index')}}">Post</a></li>
-        <li><a href="#">Assignment</a></li>
+                        <li><a href="{{Route('lecture.index')}}">Lecture</a></li>
+                        <li><a href="{{Route('post.index')}}">Post</a></li>
+                        <li><a href="#">Assignment</a></li>
 
-    </ul>
+                    </ul>
 
-    <ul class="nav navbar-nav pull-right">
+                    <ul class="nav navbar-nav pull-right">
 
-        <li><a href="#" class="pull-right">Logout</a></li>
+                        <li><a href="#" class="pull-right">Logout</a></li>
 
-    </ul>
+                    </ul>
 
 
-</nav>
+                </nav>
 
-@yield('content')
+
+                @yield('content')
+
+
 
 </body>
 </html>

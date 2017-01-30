@@ -6,9 +6,48 @@
 
         <div style="margin-top: 5em">
 
-            <a href="{{Route('post.create')}}" class="btn btn-primary pull-right"><span style="margin-right: 1em"><i class="fa fa-plus" aria-hidden="true"></i></span>Add Lecture</a>
+            <a href="{{Route('post.create')}}" class="btn btn-primary pull-right"><span style="margin-right: 1em"><i class="fa fa-plus" aria-hidden="true"></i></span>Add Post</a>
 
         </div>
+
+
+
+        <div style="margin-top:10em" >
+
+            <table class="table table-hover table-striped table-responsive" >
+
+                <tr>
+
+                    <th>Id</th>
+                    <th>Post Title</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+
+                </tr>
+
+                {{--@foreach($department as $dept)--}}
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            {{--<form method="post" action="{{Route('department.destroy',['id'=>$dept->id])}}">--}}
+                                {{--{{csrf_field()}}--}}
+                                {{--{{method_field('delete')}}--}}
+                                {{--<input type="submit" value="Delete" class="btn btn-danger">--}}
+                            {{--</form>--}}
+                        </td>
+
+                    </tr>
+
+                {{--@endforeach--}}
+
+            </table>
+
+        </div>
+
+
 
 
     </div>
