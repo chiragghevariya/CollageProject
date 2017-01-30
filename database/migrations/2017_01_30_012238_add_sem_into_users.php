@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddDepartmentIdIntoUsers extends Migration
+class AddSemIntoUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddDepartmentIdIntoUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('department_id')->default(0);
+            $table->integer('semester')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class AddDepartmentIdIntoUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('department_id');
+            $table->dropColumn('semester');
         });
     }
 }
