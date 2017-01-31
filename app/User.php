@@ -44,6 +44,47 @@ class User extends Authenticatable
 
 //    public function department(){
 //
-//        $this->belongsTo('App\Department');
+//        return $this->belongsTo('App\Department');
 //    }
+
+//    public function post(){
+//
+//        return $this->hasMany('App\Post');
+//    }
+
+//    public function subject(){
+//
+//        return $this->belongsToMany('App\Subject');
+//    }
+
+//    public function lecture(){
+//
+//        return $this->hasMany('App\Lecture');
+//    }
+
+
+    public static function UserRole($number){
+
+        switch ($number){
+
+            case 0:
+                return 'admin';
+                break;
+
+            case 1:
+                return 'faculty';
+                break;
+
+            case 2:
+                return 'faculty';
+                break;
+
+            case 3:
+                return 'student';
+                break;
+
+            default:
+                return "null";
+        }
+    }
 }

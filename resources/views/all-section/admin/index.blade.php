@@ -12,7 +12,7 @@
 
 
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{url('admin-home')}}"><span><i class="fa fa-home" aria-hidden="true"></i></span>Home</a>
+                <a class="navbar-brand" href="{{url('all-section/admin/home')}}"><span><i class="fa fa-home" aria-hidden="true"></i></span>Home</a>
             </div>
 
             <ul class="nav navbar-nav">

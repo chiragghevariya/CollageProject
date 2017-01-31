@@ -22,7 +22,7 @@
 
                     <div class="navbar-header ">
 
-                        <a class="navbar-brand" href="{{url('faculty-home')}}"><span><i class="fa fa-home fa" aria-hidden="true"></i></span>Home</a>
+                        <a class="navbar-brand" href="{{url('all-section/faculty/home')}}"><span><i class="fa fa-home fa" aria-hidden="true"></i></span>Home</a>
 
                     </div>
 
@@ -38,7 +38,7 @@
 
                     <ul class="nav navbar-nav pull-right">
 
-                        <li><a href="#" class="pull-right">Logout</a></li>
+                        <li><a href="{{url('logout')}}" class="pull-right">Logout</a></li>
 
                     </ul>
 

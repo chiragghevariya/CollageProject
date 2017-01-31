@@ -14,15 +14,20 @@ class loginController extends Controller
 
     public function authenticate(Request $request){
 
+        if(\Auth::check())
+        {
+            return redirect('logout');
+        }
+
         $email =  $request->email;
         $password =$request->password;
 
-        if(\Auth::attempt(['email'=>$email,'password' =>$password])){
+        if(\Auth::attempt(['email'=>$email,'password' =>$password]))
+        {
 
-            if(\Auth::user()->role == 0){
+            return redirect()->intended('all-section/'.\App\User::UserRole(\Auth::user()->role).'/home');
+        }
 
-                return redirect()->Route('adminhome');
-            }
             else
             {
 
@@ -32,7 +37,7 @@ class loginController extends Controller
 
         }
 
-    }
+
 
 
     public function logout()
