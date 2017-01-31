@@ -13,12 +13,15 @@
 
 //*********   Login and Registration of student and faculty or HOD  ***********************
 
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Request;
+
 Route::get('/', function () {
     return view('layout.welcome');
 });
 
 
-Route::get('getlogin',['uses'=> 'loginController@getlogin']);
+
 
 Route::get('getregistration',['uses' =>'RegisterController@getRegister']);
 
@@ -35,10 +38,15 @@ Route::post('register/faculty',['as'=>'faculty.login','uses'=>'RegisterControlle
 //************ Admin section with Create department ***********************************************
 
 
-Route::get('admin-home',function (){
+Route::get('admin-home',['as'=>'adminhome',function (Request $request){
+
+    if(\Auth::check())
 
     return view('all-section.admin.home');
-});
+
+    else
+        return redirect('/');
+}]);
 
 Route::resource('admin/department','DepartmentController');
 
@@ -64,10 +72,15 @@ Route::resource('faculty/lecture','LectureController');
 Route::resource('faculty/subject','SubjectController');
 
 
+//**********************Authentication section *****************************8
 
 
+Route::get('getlogin',['uses'=> 'loginController@getlogin']);
+
+Route::post('getlogin',['uses' =>'loginController@authenticate']);
 
 
+Route::get('/logout',['as'=>'logout','uses'=>'loginController@logout']);
 
 
 

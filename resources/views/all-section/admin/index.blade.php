@@ -24,7 +24,7 @@
 
             <ul class="nav navbar-nav pull-right">
                 <li><a href="{{Route('department.create')}}"><span><i class="fa fa-plus" aria-hidden="true"></i></span>Create Department</a></li>
-                <li><a href="#" class="pull-right"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                <li><a href="{{url('logout')}}" class="pull-right"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
 
             </ul>
 
