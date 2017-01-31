@@ -9,7 +9,7 @@
 
         <button class="btn btn-default pull-right back"><a href="{{url('/')}}">Back</a></button>
 
-        <form class="loginform" method="post" action="{{url('getlogin')}}">
+        <form class="loginform" method="post" action="{{url('login')}}">
 
             {{ csrf_field() }}
 

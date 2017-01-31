@@ -9,13 +9,8 @@ Route::group(['prefix'=>'faculty'],function (){
 
     Route::get('home',function (Request $request){
 
-
-        if(\Auth::check())
-
-        return view('all-section.faculty.home');
-
-        else
-            return redirect('/');
+        $user =new \App\User();
+        return view('all-section.faculty.home')->with(['user'=>$user]);
 
     });
 

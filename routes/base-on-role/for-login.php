@@ -19,9 +19,9 @@ Route::get('register/faculty',['uses'=>'RegisterController@getFacultyRegister'])
 Route::post('register/faculty',['as'=>'faculty.login','uses'=>'RegisterController@facultyRegister']);
 
 
-Route::get('getlogin',['uses'=> 'loginController@getlogin']);
+Route::get('login',['uses'=> 'loginController@getlogin']);
 
-Route::post('getlogin',['uses' =>'loginController@authenticate']);
+Route::post('login',['uses' =>'loginController@authenticate']);
 
 
 Route::get('/logout',['as'=>'logout','uses'=>'loginController@logout']);

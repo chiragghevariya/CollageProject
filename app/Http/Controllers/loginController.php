@@ -14,18 +14,18 @@ class loginController extends Controller
 
     public function authenticate(Request $request){
 
-        if(\Auth::check())
-        {
-            return redirect('logout');
-        }
+//        if(\Auth::check())
+//        {
+//            return redirect('logout');
+//        }
 
         $email =  $request->email;
         $password =$request->password;
 
-        if(\Auth::attempt(['email'=>$email,'password' =>$password]))
+        if(Auth::attempt(['email'=>$email,'password' =>$password]))
         {
 
-            return redirect()->intended('all-section/'.\App\User::UserRole(\Auth::user()->role).'/home');
+            return redirect()->intended('all-section/'.\App\User::UserRole(Auth::user()->role).'/home');
         }
 
             else

@@ -7,13 +7,7 @@ Route::group(['prefix'=>'student'],function (){
 
     Route::get('home',function (Request $request){
 
-       if(\Auth::check())
-
-           return "you are student";
-
-               else
-
-                   return redirect('/');
+        return "you are student";
 
     });
 
