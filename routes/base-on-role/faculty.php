@@ -7,12 +7,15 @@ Route::group(['prefix'=>'faculty'],function (){
 
 
 
-    Route::get('home',function (Request $request){
+    Route::get('/home',function (Request $request){
 
         $user =new \App\User();
         return view('all-section.faculty.home')->with(['user'=>$user]);
 
     });
+
+
+
 
     Route::resource('faculty/post','PostController');
 
