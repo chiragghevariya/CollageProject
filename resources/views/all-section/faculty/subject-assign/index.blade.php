@@ -29,32 +29,24 @@
 
                 </tr>
 
-                {{--@foreach($department as $dept)--}}
+
+                @foreach($subject as $subject)
 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        {{--<form method="post" action="{{Route('department.destroy',['id'=>$dept->id])}}">--}}
-                        {{--{{csrf_field()}}--}}
-                        {{--{{method_field('delete')}}--}}
-                        {{--<input type="submit" value="Delete" class="btn btn-danger">--}}
-                        {{--</form>--}}
-                    </td>
+                    <td>{{$subject->id}}</td>
+                    <td>{{$subject->name}}</td>
+                    <td>{{$subject->semester}}</td>
+                    <td>{{$subject->user_id}}</td>
+                    <td><a class="btn btn-primary" href="{{Route('subject.edit',['id'=>$subject->id])}}">Edit</a></td>
+                    <td><a class="btn btn-danger">Delete</a></td>
 
                 </tr>
 
-                {{--@endforeach--}}
+                @endforeach
 
             </table>
 
         </div>
-
-
-
 
     </div>
 

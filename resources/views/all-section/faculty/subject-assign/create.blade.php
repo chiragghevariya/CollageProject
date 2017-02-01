@@ -14,66 +14,97 @@
 
         </div>
 
-        <div>
+        <div class="subject-form">
 
-            <form >
+            <div class="panel panel-default" style="width: 70%">
+                <div class="panel-heading">Assign Subject to Faculty</div>
+                <div class="panel-body">
 
-                {{csrf_field()}}
+                    <form method="post" action="{{Route('subject.store')}}">
 
-                <div class="row">
+                        {{csrf_field()}}
 
-                    <div class="col-md-6">
+                        <div class="row" style="width:100%;margin-left: 4em;">
 
-                        <div class="form-group">
+                            <div class="col-md-5">
 
-                            <label for="Subject">Subject:</label>
-                            <input type="text" class="form-control" name="subject" placeholder="Add subject name">
+                                <div class="form-group">
 
-                        </div>
+                                    <label for="Subject">Subject:</label>
+                                    <input type="text" class="form-control" name="subject" placeholder="Add subject name">
 
-                    </div>
+                                </div>
 
-                </div>
+                            </div>
 
-                <div class="row">
+                            <div class="col-md-5">
 
-                    <div class="col-md-6">
+                                <div class="form-group">
 
-                        <div class="form-group">
+                                    <label for="semester">Select semester</label>
+                                    <select class="form-control" name="semester" id="">
 
-                            <label for="semester">Select semester</label>
-                            <select class="form-control">
-                                <option></option>
-                            </select>
+                                            <option selected>Select Semester</option>
 
-                        </div>
+                                        @for($i=1;$i<=8;$i++)
 
-                    </div>
+                                             <option value="{{$i}}">semester {{$i}}</option>
 
-                </div>
+                                        @endfor
 
-                <div class="row">
+                                    </select>
 
-                    <div class="col-md-6">
+                                </div>
 
-                        <div class="form-group">
-
-                            <label for="faculty">Assign To this</label>
-                            <select class="form-control">
-                                <option></option>
-                            </select>
+                            </div>
 
                         </div>
 
-                    </div>
+
+                        <div class="row" style="width:100%;margin-left: 4em;">
+
+                            <div class="col-md-10">
+
+                                <div class="form-group">
+
+                                    <label for="faculty">Assign To this</label>
+                                    <select class="form-control" name="faculties[]" multiple="multiple">
+
+                                        @foreach($faculties as $faculty)
+
+                                        <option value="{{$faculty->id}}">{{$faculty->name}}</option>
+
+                                        @endforeach
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row" style="width: 100%;margin-left: 15em">
+
+                            <div class="col-md-10">
+
+                                <input type="submit" value="Assign Subject" class="btn btn-primary">
+                                <a class="btn btn-danger" style=" margin-left: 1em" href="{{Route('subject.index')}}">Cancle</a>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </form>
+
+
 
                 </div>
+            </div>
 
 
-                <input type="submit" value="Assign Subject" class="btn btn-primary">
-                <a class="btn btn-danger" style=" margin-left: 1em" href="{{Route('subject.index')}}">Cancle</a>
-
-            </form>
 
 
         </div>

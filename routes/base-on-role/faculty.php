@@ -19,8 +19,6 @@ Route::group(['prefix'=>'faculty'],function (){
     Route::resource('faculty/lecture','LectureController');
 
 
-
-
     Route::resource('faculty/subject','SubjectController');
 
 

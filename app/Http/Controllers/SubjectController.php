@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Subject;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SubjectController extends Controller
 {
@@ -13,7 +16,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        return view('all-section.faculty.subject-assign.index');
+        $subject =Subject::all();
+        return view('all-section.faculty.subject-assign.index',['subject'=>$subject]);
     }
 
     /**
@@ -23,7 +27,9 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        return view('all-section.faculty.subject-assign.create');
+        $department = Auth::user()->department()->first();
+        $faculties =$department->faculties()->get();
+        return view('all-section.faculty.subject-assign.create',['faculties'=>$faculties]);
     }
 
     /**
@@ -34,7 +40,14 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $subject =new Subject();
+        $subject->name =$request->subject;
+        $subject->semester =$request->semester;
+        $subject->department_id =Auth::user()->department_id;
+        $subject->user_id = Auth::user()->id;
+        $subject->save();
+//        $subject->users()->sync($request->faculties);
+        return redirect()->route('subject.index');
     }
 
     /**

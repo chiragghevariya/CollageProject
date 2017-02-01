@@ -34,18 +34,18 @@ class User extends Authenticatable
 
     public function student(){
 
-        return $this->belongsTo('App\Student');
+        return $this->hasOne('App\Student')->first();
     }
 
     public function faculty(){
-        return $this->belongsTo('App\Faculty');
+        return $this->hasOne('App\Faculty')->first();
 
     }
 
-//    public function department(){
-//
-//        return $this->belongsTo('App\Department');
-//    }
+    public function department(){
+
+        return $this->belongsTo('App\Department');
+    }
 
 //    public function post(){
 //
@@ -87,4 +87,10 @@ class User extends Authenticatable
                 return "null";
         }
     }
+
+    public static function Name($id)
+    {
+        return User::find($id)->name;
+    }
+
 }

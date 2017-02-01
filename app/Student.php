@@ -10,4 +10,9 @@ class Student extends Model
 //
 //        'enroll'
 //    ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User')->first();
+    }
 }
