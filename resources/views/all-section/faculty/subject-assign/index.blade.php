@@ -16,6 +16,8 @@
 
         <div style="margin-top:10em" >
 
+            @if(isset($subject) && $subject->count() > 0)
+
             <table class="table table-hover table-striped table-responsive" >
 
                 <tr>
@@ -32,18 +34,18 @@
 
                 @foreach($subject as $subject)
 
-                <tr>
+                    <tr>
+
                     <td>{{$subject->id}}</td>
                     <td>{{$subject->name}}</td>
                     <td>{{$subject->semester}}</td>
                     <td>
-
-                        @foreach($subject->users()->get() as $user)
+                        @if($subject->users()->count() > 0 )
+                            @foreach($subject->users()->get() as $user)
                                 {{ $user->name }}
-                        @endforeach
-
+                            @endforeach
+                        @endif
                     </td>
-
                     <td><a class="btn btn-primary" href="{{Route('subject.edit',['id'=>$subject->id])}}">Edit</a></td>
                     <td>
                         <form action="{{Route('subject.destroy',['id'=>$subject->id])}}" method="post">
@@ -56,10 +58,17 @@
                     </td>
 
                 </tr>
-
                 @endforeach
 
             </table>
+
+            @else
+
+                <p > <i class="fa fa-plus fa-lg icon"></i>
+                    Add your first Subject by clicking the <span class="label label-info">Add Subject</span>
+                    Button </p>
+
+            @endif
 
         </div>
 

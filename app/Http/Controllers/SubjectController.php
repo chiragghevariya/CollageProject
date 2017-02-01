@@ -16,7 +16,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subject =Subject::all();
+        $subject =Subject::department(Auth::user()->department_id);
         return view('all-section.faculty.subject-assign.index',['subject'=>$subject]);
     }
 

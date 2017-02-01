@@ -62,6 +62,13 @@ class User extends Authenticatable
 //        return $this->hasMany('App\Lecture');
 //    }
 
+    public function scopeDepartment($query, $department_id)
+    {
+        return $query->where('department_id', $department_id)
+            ->get();
+    }
+
+
 
     public static function UserRole($number){
 
