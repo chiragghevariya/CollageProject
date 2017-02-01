@@ -36,7 +36,14 @@
                     <td>{{$subject->id}}</td>
                     <td>{{$subject->name}}</td>
                     <td>{{$subject->semester}}</td>
-                    <td>{{$subject->user_id}}</td>
+                    <td>
+
+
+                            @foreach($subject->users()->get() as $user)
+                                {{ $user->name }}
+                            @endforeach
+
+                    </td>
                     <td><a class="btn btn-primary" href="{{Route('subject.edit',['id'=>$subject->id])}}">Edit</a></td>
                     <td><a class="btn btn-danger">Delete</a></td>
 

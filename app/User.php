@@ -52,10 +52,10 @@ class User extends Authenticatable
 //        return $this->hasMany('App\Post');
 //    }
 
-//    public function subject(){
-//
-//        return $this->belongsToMany('App\Subject');
-//    }
+    public function subjects(){
+
+        return $this->belongsToMany('App\Subject');
+    }
 
 //    public function lecture(){
 //

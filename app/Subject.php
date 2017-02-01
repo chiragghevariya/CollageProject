@@ -11,8 +11,8 @@ class Subject extends Model
 //        return $this->belongsToMany('App\User');
 //    }
 
-    public function user(){
-
-     return $this->belongsTo('App\User')->where('id','name');
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
     }
 }

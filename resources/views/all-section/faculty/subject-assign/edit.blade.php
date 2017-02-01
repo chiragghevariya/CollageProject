@@ -17,12 +17,14 @@
         <div class="subject-form">
 
             <div class="panel panel-default" style="width: 70%">
-                <div class="panel-heading">Assign Subject to Faculty</div>
+                <div class="panel-heading"> Edit Assign Subject to Faculty</div>
                 <div class="panel-body">
 
-                    <form method="post">
+                    <form method="post" action="{{Route('subject.update',['id'=>$subject->id])}}">
 
                         {{csrf_field()}}
+
+                        <input type="hidden" name="_method" value="put">
 
                         <div class="row" style="width:100%;margin-left: 4em;">
 
@@ -31,7 +33,7 @@
                                 <div class="form-group">
 
                                     <label for="Subject">Subject:</label>
-                                    <input type="text" class="form-control" name="subject" placeholder="Add subject name">
+                                    <input type="text" class="form-control" name="subject" value="{{$subject->name}}">
 
                                 </div>
 
@@ -48,7 +50,7 @@
 
                                         @for($i=1;$i<=8;$i++)
 
-                                            <option value="{{$i}}">semester {{$i}}</option>
+                                            <option value="{{$i}}" @if($subject->semester == $i) selected @endif>semester {{$i}}</option>
 
                                         @endfor
 
@@ -72,7 +74,7 @@
 
                                         @foreach($faculties as $faculty)
 
-                                            <option value="{{$faculty->id}}">{{$faculty->name}}</option>
+                                            <option value="{{$faculty->id}}"@if(in_array($faculty->id,$faculty_selected,true)) selected @endif>{{$faculty->name}}</option>
 
                                         @endforeach
 
@@ -88,24 +90,19 @@
 
                             <div class="col-md-10">
 
-                                <input type="submit" value="Assign Subject" class="btn btn-primary">
+                                <input type="submit" value="update" class="btn btn-primary">
                                 <a class="btn btn-danger" style=" margin-left: 1em" href="{{Route('subject.index')}}">Cancle</a>
 
 
                             </div>
 
-
                         </div>
 
                     </form>
 
-
-
                 </div>
+
             </div>
-
-
-
 
         </div>
 

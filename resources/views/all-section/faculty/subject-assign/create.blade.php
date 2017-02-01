@@ -68,7 +68,7 @@
                                 <div class="form-group">
 
                                     <label for="faculty">Assign To this</label>
-                                    <select class="form-control" name="faculties[]" multiple="multiple">
+                                    <select class="form-control" name="faculties[]" id="" multiple="multiple">
 
                                         @foreach($faculties as $faculty)
 

@@ -47,6 +47,7 @@ class SubjectController extends Controller
         $subject->user_id = Auth::user()->id;
         $subject->save();
 //        $subject->users()->sync($request->faculties);
+        $subject->users()->sync($request->faculties);
         return redirect()->route('subject.index');
     }
 
@@ -69,7 +70,12 @@ class SubjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $department= \Auth::user()->department()->first();
+        $faculties = $department->faculties()->get();
+
+        $subject =Subject::find($id);
+        $faculty_selected =  $subject->users()->pluck('user_id')->toArray();
+        return view('all-section.faculty.subject-assign.edit',['subject'=>$subject,'faculties'=>$faculties,'faculty_selected'=>$faculty_selected]);
     }
 
     /**
@@ -81,7 +87,16 @@ class SubjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $subject =Subject::find($id);
+        $subject->name =$request->subject;
+        $subject->semester =$request->semester;
+        $subject->department_id =Auth::user()->department_id;
+        $subject->user_id = Auth::user()->id;
+        $subject->save();
+//        $subject->users()->sync($request->faculties);
+        $subject->users()->sync($request->faculties);
+        return redirect()->route('subject.index');
     }
 
     /**
