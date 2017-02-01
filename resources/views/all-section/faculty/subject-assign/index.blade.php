@@ -38,14 +38,22 @@
                     <td>{{$subject->semester}}</td>
                     <td>
 
-
-                            @foreach($subject->users()->get() as $user)
+                        @foreach($subject->users()->get() as $user)
                                 {{ $user->name }}
-                            @endforeach
+                        @endforeach
 
                     </td>
+
                     <td><a class="btn btn-primary" href="{{Route('subject.edit',['id'=>$subject->id])}}">Edit</a></td>
-                    <td><a class="btn btn-danger">Delete</a></td>
+                    <td>
+                        <form action="{{Route('subject.destroy',['id'=>$subject->id])}}" method="post">
+
+                            {{csrf_field()}}
+                            {{method_field('delete')}}
+                            <input type="submit" class="btn btn-danger" value="Delete">
+
+                        </form>
+                    </td>
 
                 </tr>
 
