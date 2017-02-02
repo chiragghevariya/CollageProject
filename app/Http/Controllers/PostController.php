@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -13,7 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('all-section.faculty.post.index');
+        $post =Post::auth()->get();
+        return view('all-section.faculty.post.index',['post'=>$post]);
     }
 
     /**
@@ -34,6 +37,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        $post =new Post();
+        $post->user_id =Auth::user()->id;
+        $post->title =$request->title;
+        $post->description =$request->description;
+        $post->save();
+        return redirect()->route('post.index');
 
     }
 

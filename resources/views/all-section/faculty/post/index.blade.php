@@ -20,17 +20,18 @@
 
                     <th>Id</th>
                     <th>Post Title</th>
+                    <th>Description</th>
                     <th>Edit</th>
                     <th>Delete</th>
 
                 </tr>
 
-                {{--@foreach($department as $dept)--}}
+                @foreach($post as $post)
 
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{$post->id}}</td>
+                        <td>{{$post->title}}</td>
+                        <td $post->description ></td>
                         <td>
                             {{--<form method="post" action="{{Route('department.destroy',['id'=>$dept->id])}}">--}}
                                 {{--{{csrf_field()}}--}}
@@ -41,7 +42,7 @@
 
                     </tr>
 
-                {{--@endforeach--}}
+                @endforeach
 
             </table>
 

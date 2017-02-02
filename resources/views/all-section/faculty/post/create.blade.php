@@ -14,7 +14,7 @@
 
         <div class="post-form">
 
-            <form >
+            <form method="post" action="{{Route('post.store')}}">
 
                 {{csrf_field()}}
 
@@ -40,7 +40,7 @@
                         <div class="form-group">
 
                             <label for="Title">Add link ,images and text:</label>
-                            <textarea class="form-control" rows="20" cols="20" name="summernote-post" id="summernote-post" ></textarea>
+                            <textarea class="form-control" rows="20" cols="20" name="description" id="summernote-post" ></textarea>
 
                         </div>
 
