@@ -3,7 +3,6 @@
 
 @section('content')
 
-    <div class="container">
 
 
         <div class="department-form">
@@ -12,7 +11,7 @@
 
                 {{csrf_field()}}
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
 
                         <div class="form-group">
 
@@ -25,13 +24,23 @@
 
                 </div>
 
-                <input type="submit" class="btn btn-success" value="create">
-                <a class="btn btn-danger" href="{{Route('department.index')}}">Cancle</a>
+                <div class="row">
+
+                    <div class="col-md-4">
+
+
+                        <input type="submit" class="btn btn-success" value="create">
+                        <a class="btn btn-danger" href="{{Route('department.index')}}">Cancle</a>
+
+                    </div>
+
+
+                </div>
+
 
             </form>
 
         </div>
 
 
-    </div>
 
