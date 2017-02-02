@@ -15,6 +15,12 @@ class CreateLecturesTable extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('subject_id');
+            $table->string('title');
+            $table->date('date');
+            $table->string('information');
+            $table->string('summernote_lecture');
             $table->timestamps();
         });
     }

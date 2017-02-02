@@ -24,30 +24,31 @@
                     <th>Lecture Title</th>
                     <th>Subject</th>
                     <th>Created Date</th>
-                    <th>Info</th>
+                    {{--<th>Info</th>--}}
                     <th>Edit</th>
                     <th>Delete</th>
 
                 </tr>
 
-                {{--@foreach($department as $dept)--}}
+                @foreach($lecture as $lecture)
 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$lecture->id}}</td>
+                    <td>{{$lecture->title}}</td>
+                    <td>{{App\subject::Name($lecture->subject_id)}}</td>
+                    <td>{{$lecture->date}}</td>
+                    <td><a href="{{Route('lecture.edit',['id'=>$lecture->id])}}" class="btn btn-primary">Edit</a></td>
                     <td>
-                        {{--<form method="post" action="{{Route('department.destroy',['id'=>$dept->id])}}">--}}
-                        {{--{{csrf_field()}}--}}
-                        {{--{{method_field('delete')}}--}}
-                        {{--<input type="submit" value="Delete" class="btn btn-danger">--}}
-                        {{--</form>--}}
+                        <form method="post" action="{{Route('lecture.destroy',['id'=>$lecture->id])}}">
+                        {{csrf_field()}}
+                        {{method_field('delete')}}
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
                     </td>
 
                 </tr>
 
-                {{--@endforeach--}}
+                @endforeach
 
             </table>
 

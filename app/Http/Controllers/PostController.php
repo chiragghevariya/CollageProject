@@ -66,7 +66,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post=Post::find($id);
+        return view('all-section.faculty.post.edit',['post'=>$post]);
     }
 
     /**
@@ -78,7 +79,13 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $postupdate =Post::find($id);
+        $postupdate->user_id =Auth::user()->id;
+        $postupdate->title =$request->title;
+        $postupdate->description =$request->description;
+        $postupdate->save();
+        return redirect()->route('post.index');
+
     }
 
     /**
@@ -89,6 +96,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post =Post::find($id);
+        $post->delete();
+        return redirect()->route('post.index');
     }
 }

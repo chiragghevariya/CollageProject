@@ -17,67 +17,66 @@
 <body>
 
 
-                <nav class="navbar navbar-default navbar-fixed-top for-faculty">
+                <div class="container">
 
-                    <div class="container">
-
-                        <div class="navbar-header">
-
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-
-                            </button>
-
-                            <a class="navbar-brand" href="{{url('all-section/faculty/home')}}"><span><i class="fa fa-home fa" aria-hidden="true"></i></span>Home</a>
-
-                        </div>
-
-                        <div id="navbar" class="navbar-collapse collapse">
-
-                            <ul class="nav navbar-nav">
-
-                                @if(Auth::user()->role ==2)
-
-                                    <li><a href="{{Route('lecture.index')}}">Lecture</a></li>
-                                    <li><a href="{{Route('post.index')}}">Post</a></li>
-                                    <li><a href="#">Assignment</a></li>
+                    <nav class="navbar navbar-default navbar-fixed-top for-faculty">
 
 
-                                @else
+                            <div class="navbar-header">
 
-                                    <li><a href="{{Route('lecture.index')}}">Lecture</a></li>
-                                    <li><a href="{{Route('post.index')}}">Post</a></li>
-                                    <li><a href="#">Assignment</a></li>
-                                    <li><a href="{{Route('subject.index')}}">Subject</a></li>
-                                    <li><a href="">Verify User</a></li>
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 
-                                @endif
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+
+                                </button>
+
+                                <a class="navbar-brand" href="{{url('all-section/faculty/home')}}"><span><i class="fa fa-home fa" aria-hidden="true"></i></span>Home</a>
+
+                            </div>
+
+                            <div id="navbar" class="navbar-collapse collapse">
+
+                                <ul class="nav navbar-nav">
+
+                                    @if(Auth::user()->role ==2)
+
+                                        <li><a href="{{Route('lecture.index')}}">Lecture</a></li>
+                                        <li><a href="{{Route('post.index')}}">Post</a></li>
+                                        <li><a href="#">Assignment</a></li>
+
+
+                                    @else
+
+                                        <li><a href="{{Route('lecture.index')}}">Lecture</a></li>
+                                        <li><a href="{{Route('post.index')}}">Post</a></li>
+                                        <li><a href="#">Assignment</a></li>
+                                        <li><a href="{{Route('subject.index')}}">Subject</a></li>
+                                        <li><a href="">Verify User</a></li>
+
+                                    @endif
 
 
 
-                            </ul>
+                                </ul>
 
-                            <ul class="nav navbar-nav navbar-right">
+                                <ul class="nav navbar-nav navbar-right">
 
-                                <li><a href="{{url('logout')}}">Logout</a></li>
+                                    <li><a href="{{url('logout')}}">Logout</a></li>
 
-                            </ul>
+                                </ul>
 
-                        </div><!--/.nav-collapse -->
-
-                    </div>
-
-                </nav>
+                            </div><!--/.nav-collapse -->
 
 
+                    </nav>
+
+
+                </div>
 
                 @yield('content')
-
-
 
 </body>
 </html>

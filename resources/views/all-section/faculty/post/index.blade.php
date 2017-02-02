@@ -20,7 +20,7 @@
 
                     <th>Id</th>
                     <th>Post Title</th>
-                    <th>Description</th>
+                    {{--<th>Description</th>--}}
                     <th>Edit</th>
                     <th>Delete</th>
 
@@ -31,13 +31,14 @@
                     <tr>
                         <td>{{$post->id}}</td>
                         <td>{{$post->title}}</td>
-                        <td $post->description ></td>
+                        {{--<td>{!! $post->description!!}</td>--}}
+                        <td><a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-primary">Edit</a></td>
                         <td>
-                            {{--<form method="post" action="{{Route('department.destroy',['id'=>$dept->id])}}">--}}
-                                {{--{{csrf_field()}}--}}
-                                {{--{{method_field('delete')}}--}}
-                                {{--<input type="submit" value="Delete" class="btn btn-danger">--}}
-                            {{--</form>--}}
+                            <form method="post" action="{{Route('post.destroy',['id'=>$post->id])}}">
+                                {{csrf_field()}}
+                                {{method_field('delete')}}
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                            </form>
                         </td>
 
                     </tr>
@@ -48,11 +49,7 @@
 
         </div>
 
-
-
-
     </div>
 
-
-    @stop
+@stop
 

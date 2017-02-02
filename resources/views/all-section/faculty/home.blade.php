@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div style="width: 80%;margin: auto;margin-top: 8em" >
+    <div style=" width: 80%;margin: auto;margin-top: 8em" >
 
         <div class="row">
 
@@ -29,7 +29,7 @@
 
     </div>
 
-    <div style="width: 80%;margin: auto;margin-top: 4em">
+    <div style=" width: 80%;margin: auto;margin-top: 4em">
 
         <div class="row">
 
@@ -57,4 +57,4 @@
     </div>
 
 
-@stop
+

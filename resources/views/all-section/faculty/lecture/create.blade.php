@@ -15,7 +15,7 @@
 
         <div class="lecture-form">
 
-            <form >
+            <form method="post" action="{{Route('lecture.store')}}" >
 
                 {{csrf_field()}}
 
@@ -37,8 +37,12 @@
                             <div class="form-group">
 
                                 <label for="subject">Select subject:</label>
-                                <select class="form-control">
-                                    <option></option>
+                                <select class="form-control" name="subject_id">
+                                    @foreach($subject as $subject)
+                                    <option value="{{$subject->id}}">{{$subject->name}}</option>
+
+                                        @endforeach
+
                                 </select>
 
                             </div>
@@ -84,7 +88,7 @@
                         <div class="form-group">
 
                             <label for="Title">Add link ,images and text:</label>
-                            <textarea class="form-control" rows="20" cols="20" name="summernote-lecture" id="summernote-lecture" ></textarea>
+                            <textarea class="form-control" rows="20" cols="20" name="summernote_lecture" id="summernote-lecture" ></textarea>
 
                         </div>
 

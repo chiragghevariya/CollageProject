@@ -1,8 +1,7 @@
 body{
 
-    overflow: hidden;
     background:#F3E5F5;
-    width: 100%;
+
 }
 
 .for-faculty{
@@ -28,14 +27,6 @@ body{
     padding: 10em;
 }
 
-.admin-block{
-    width: 20em;
-    height: 15em;
-    box-shadow: 1px 2px 3px #B39DDB;
-    text-align: center;
-    padding: 6.4em;
-
-}
 
 
 

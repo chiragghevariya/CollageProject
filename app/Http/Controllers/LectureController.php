@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Lecture;
+use App\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LectureController extends Controller
 {
@@ -13,7 +16,8 @@ class LectureController extends Controller
      */
     public function index()
     {
-        return view('all-section.faculty.lecture.index');
+        $lecture=Lecture::auth()->get();
+        return view('all-section.faculty.lecture.index',['lecture'=>$lecture]);
     }
 
     /**
@@ -23,7 +27,8 @@ class LectureController extends Controller
      */
     public function create()
     {
-        return view('all-section.faculty.lecture.create');
+        $subject =  Auth::user()->subjects()->get();
+        return view('all-section.faculty.lecture.create',['subject'=>$subject]);
     }
 
     /**
@@ -34,7 +39,16 @@ class LectureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lecture =new Lecture();
+        $lecture->user_id= Auth::user()->id;
+        $lecture->subject_id = $request->subject_id;
+        $lecture->title = $request->title;
+        $lecture->date =$request->date;
+        $lecture->information =$request->information;
+        $lecture->summernote_lecture =$request->summernote_lecture;
+        $lecture->save();
+        return redirect()->route('lecture.index');
+
     }
 
     /**
@@ -56,7 +70,11 @@ class LectureController extends Controller
      */
     public function edit($id)
     {
-        //
+        $subject =Auth::user()->subjects()->get();
+        $lecture =Lecture::find($id);
+
+
+        return view('all-section.faculty.lecture.edit',['subject'=>$subject,'lecture'=>$lecture]);
     }
 
     /**
@@ -68,7 +86,17 @@ class LectureController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $lecture =Lecture::find($id);
+        $lecture->user_id= Auth::user()->id;
+        $lecture->subject_id = $request->subject_id;
+        $lecture->title = $request->title;
+        $lecture->date =$request->date;
+        $lecture->information =$request->information;
+        $lecture->summernote_lecture =$request->summernote_lecture;
+        $lecture->save();
+        return redirect()->route('lecture.index');
+
+
     }
 
     /**
@@ -79,6 +107,9 @@ class LectureController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lecture =Lecture::find($id);
+        $lecture->delete();
+        return redirect()->route('lecture.index');
+
     }
 }
