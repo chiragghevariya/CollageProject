@@ -78,6 +78,119 @@
 
         </div>
 
+                                                        <hr>
+
+
+        @if(isset($question))
+
+        <form  method="post" action="{{route('question.update',['id'=>$question->id])}}">
+            {{csrf_field()}}
+            <input type="hidden" name="_method" value="put">
+            <input type="hidden" name="assignment_id" value="{{$assignment->id}}">
+
+            <div class="row">
+                <div class="col-md-5">
+
+                    <div class="form-group">
+
+                        <label for="question">Question</label>
+                        <input type="text" name="question" class="form-control" value="{{$question->question}}">
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-5">
+
+                    <div class="form-group">
+
+                        <label for="">Hint</label>
+                        <textarea name="hint" id="" cols="30" rows="4" class="form-control">{{$question->hint}}</textarea>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <input type="submit" value="update Question" class="btn btn-success pull-right">
+
+            </div>
+
+        </form>
+
+        @else
+
+            <form action="{{route('question.store')}}" method="post">
+            {{csrf_field()}}
+            <input type="hidden" name="assignment_id" value="{{$assignment->id}}">
+
+            <div class="row">
+                <div class="col-md-5">
+
+                    <div class="form-group">
+
+                        <label for="question">Question</label>
+                        <input type="text" name="question" class="form-control" placeholder="add question">
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-5">
+
+                    <div class="form-group">
+
+                        <label for="">Hint</label>
+                        <textarea name="hint" id="" cols="30" placeholder="give some tips about this question" rows="4" class="form-control"></textarea>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <input type="submit" value="Add Question" class="btn btn-success pull-right">
+
+            </div>
+
+        </form>
+
+        @endif
+
+        <hr>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Question</th>
+                <th>Edit</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($assignment->questions()->get() as $question)
+                <tr>
+
+                    <td>{{$question->id}}</td>
+                    <td>{{$question->question}}</td>
+                    <td><a href="{{route('question.edit',['id'=>$question->id])}}"
+                           class="btn btn-primary">Edit</a></td>
+                    <td>
+
+                        <form method="post" action="{{Route('question.destroy',['id'=>$question->id])}}">
+                            {{csrf_field()}}
+                            {{method_field('delete')}}
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+
 
 
 

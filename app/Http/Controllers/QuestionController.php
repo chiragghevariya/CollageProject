@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Assignment;
-use App\Subject;
+use App\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AssignmentController extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,7 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        $assignment =Assignment::auth()->get();
-        return view('all-section.faculty.assignment.index',['assignment'=>$assignment]);
+        //
     }
 
     /**
@@ -27,8 +26,7 @@ class AssignmentController extends Controller
      */
     public function create()
     {
-        $subject =  Auth::user()->subjects()->get();
-        return view('all-section.faculty.assignment.create',['subject'=>$subject]);
+        //
     }
 
     /**
@@ -39,13 +37,14 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
-        $assignment =new Assignment();
-        $assignment->user_id =Auth::user()->id;
-        $assignment->subject_id =$request->subject_id;
-        $assignment->title =$request->title;
-        $assignment->information =$request->information;
-        $assignment->save();
-        return redirect()->route('assignments.edit');
+        $question= new Question();
+        $question->hint =$request->hint;
+        $question->question =$request->question;
+        $question->user_id =Auth::user()->id;
+        $question->assignment_id =$request->assignment_id;
+        $question->subject_id =Assignment::find($request->assignment_id)->subject_id;
+        $question->save();
+        return redirect()->route('assignment.index');
     }
 
     /**
@@ -67,10 +66,11 @@ class AssignmentController extends Controller
      */
     public function edit($id)
     {
-        $subject =Auth()->user()->subjects()->get();
-        $assignment =Assignment::find($id);
+        $question = Question::find($id);
+        $subject = Auth::user()->subjects()->get();
+        $assignment = Assignment::find($question->assignment_id);
+        return view('all-section.faculty.assignment.edit',['question'=>$question,'assignment'=>$assignment,'subject'=>$subject]);
 
-        return view('all-section.faculty.assignment.edit',['subject'=>$subject,'assignment'=>$assignment]);
     }
 
     /**
@@ -82,15 +82,14 @@ class AssignmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $assignment =Assignment::find($id);
-        $assignment->user_id =Auth::user()->id;
-        $assignment->subject_id =$request->subject_id;
-        $assignment->title =$request->title;
-        $assignment->information =$request->information;
-        $assignment->save();
-        return redirect()->route('assignment.index');
-
-
+        $question = Question::find($id);
+        $question->hint =$request->hint;
+        $question->question =$request->question;
+        $question->user_id =Auth::user()->id;
+        $question->assignment_id =$request->assignment_id;
+        $question->subject_id =Assignment::find($request->assignment_id)->subject_id;
+        $question->save();
+        return redirect()->route('assignment.edit',['id'=>$question->assignment_id]);
     }
 
     /**
@@ -101,8 +100,11 @@ class AssignmentController extends Controller
      */
     public function destroy($id)
     {
-        $assignment =Assignment::find($id);
-        $assignment->delete();
-        return redirect()->route('assignment.index');
+
+       $question = Question::find($id);
+       $question->delete();
+        return redirect()->route('assignment.edit',['id'=>$question->assignment_id]);
+
+
     }
 }

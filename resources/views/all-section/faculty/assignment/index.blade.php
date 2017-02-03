@@ -9,7 +9,7 @@
 
         <div style="margin-top: 5em">
 
-            <a href="{{Route('assignment.create')}}" class="btn btn-primary pull-right"><span style="margin-right: 1em"><i class="fa fa-plus" aria-hidden="true"></i></span>Add Lecture</a>
+            <a href="{{Route('assignment.create')}}" class="btn btn-primary pull-right"><span style="margin-right: 1em"><i class="fa fa-plus" aria-hidden="true"></i></span>Add Assignment</a>
 
         </div>
 
