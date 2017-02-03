@@ -14,15 +14,13 @@ Route::group(['prefix'=>'faculty'],function (){
 
     });
 
-
-
-
     Route::resource('faculty/post','PostController');
 
     Route::resource('faculty/lecture','LectureController');
 
-
     Route::resource('faculty/subject','SubjectController');
+
+    Route::resource('assignment','AssignmentController');
 
 
 
