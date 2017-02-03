@@ -100,7 +100,7 @@
                 </div>
 
 
-                <input type="submit" value="Create lecture" class="btn btn-primary">
+                <input type="submit" value="update lecture" class="btn btn-primary">
                 <a class="btn btn-danger" style="margin-left: 1em" href="{{Route('lecture.index')}}">Cancle</a>
 
             </form>

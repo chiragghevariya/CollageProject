@@ -45,7 +45,7 @@ class AssignmentController extends Controller
         $assignment->title =$request->title;
         $assignment->information =$request->information;
         $assignment->save();
-        return redirect()->route('assignments.edit');
+        return redirect()->route('assignment.edit',['id'=>$assignment->id]);
     }
 
     /**

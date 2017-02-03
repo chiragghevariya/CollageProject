@@ -33,6 +33,15 @@
         </div>
 
         <div class="form-group">
+            <label for="semester">select semester</label>
+            <select name="semester" class="form-control">
+               @for($i=1;$i<=10;$i++)
+               <option value="{{$i}}">semester {{$i}}</option>
+               @endfor
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="Enroll">Enroll</label>
             <input type="text" maxlength="12" name="enroll" class="form-control" placeholder="Enter your Enrollment Number">
         </div>
