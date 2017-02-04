@@ -68,6 +68,11 @@ class User extends Authenticatable
             ->get();
     }
 
+    public function result(){
+
+        return $this->hasMany('App\Result');
+    }
+
 
 
     public static function UserRole($number){

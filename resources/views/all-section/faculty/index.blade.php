@@ -64,7 +64,7 @@
 
                                 <ul class="nav navbar-nav navbar-right">
 
-                                    <li style="margin-top: 1em;background:#7C4DFF">Hi,{{Auth::user()->name}}</li>
+                                    <li style="margin-top: 1em;background:#E91E63">Hi,{{Auth::user()->name}}</li>
                                     <li><a href="{{url('logout')}}">Logout</a></li>
 
                                 </ul>

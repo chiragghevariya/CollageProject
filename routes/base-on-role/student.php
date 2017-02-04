@@ -11,6 +11,8 @@ Route::group(['prefix'=>'student','middleware'=>'is_student'],function (){
 
     });
 
+    Route::resource('result','ResultController');
+
 });
 
 
