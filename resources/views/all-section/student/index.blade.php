@@ -32,7 +32,7 @@
 
                 <ul class="nav navbar-nav">
 
-                    <li><a href=""><span><i class="fa fa-building-o" aria-hidden="true"></i></span>Assignment</a></li>
+                    <li><a href="{{route('submit.index')}}"><span><i class="fa fa-building-o" aria-hidden="true"></i></span>Assignment</a></li>
                     <li><a href="{{route('result.index')}}"><span><i class="fa fa-building-o" aria-hidden="true"></i></span>Result</a></li>
 
                 </ul>

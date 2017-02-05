@@ -33,6 +33,18 @@ class RegisterController extends Controller
 
     public function studentRegister(Request $request){
 
+        $this->validate($request,[
+
+            'name' =>'required',
+            'email' =>'required|unique:users',
+            'phone'=>'required|max:10',
+            'address'=>'required',
+            'semester'=>'required',
+            'password'=>'required',
+            'enroll'=>'required',
+
+        ]);
+
         $user =new User();
         $user->name =$request->name;
         $user->email =$request->email;
@@ -56,6 +68,18 @@ class RegisterController extends Controller
 
 
     public function facultyRegister(Request $request){
+
+
+        $this->validate($request,[
+
+            'name' =>'required',
+            'email' =>'required|unique:users',
+            'phone'=>'required|max:10',
+            'address'=>'required',
+            'password'=>'required',
+            'info'=>'required',
+        ]);
+
 
         $user =new User();
         $user->name =$request->name;
