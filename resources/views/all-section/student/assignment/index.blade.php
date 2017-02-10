@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <div class="container">
-
+<div class="container-fluid">
 
 
         <div class="department-table ">
+
 
             <table class="table table-hover table-striped table-responsive tableinfo" >
 
@@ -61,9 +61,6 @@
                             </td>
                         @endif
 
-
-
-
                     </tr>
 
                 @endforeach
@@ -73,8 +70,7 @@
         </div>
 
 
-    </div>
-
+</div>
 @stop
 
 

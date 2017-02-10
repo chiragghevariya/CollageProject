@@ -6,7 +6,7 @@
 
     <div class="container">
 
-        <div style="margin-top: 5em">
+        <div style="margin-right: 1em">
 
             <a href="{{Route('lecture.create')}}" class="btn btn-primary pull-right"><span style="margin-right: 1em"><i class="fa fa-plus" aria-hidden="true"></i></span>Add Lecture</a>
 
@@ -14,7 +14,7 @@
 
 
 
-        <div style="margin-top:10em" >
+        <div style="margin-top:5em" >
 
             <table class="table table-hover table-striped table-responsive" >
 

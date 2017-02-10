@@ -8,9 +8,12 @@
 
 
 </head>
-<body>
+<body style="width: 100%;height: 100%">
 
 @include('layout.welcome-nav-body')
 @yield('content')
+
+
+
 </body>
 </html>

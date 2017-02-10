@@ -7,7 +7,7 @@
 
     <div class="department-form">
 
-        <form method="post" action="{{route('result.update',['id'=>$resultt->id])}}">
+        <form method="post" action="{{route('result.update',['id'=>$resultt->id])}}" enctype="multipart/form-data">
 
             {{csrf_field()}}
             <input type="hidden" name="_method" value="put">
@@ -77,6 +77,22 @@
 
             </div>
 
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <div class="form-group">
+
+                        <label for="Title">Image:</label>
+                        <input type="file" name="photo" class="form-control" value="{{$resultt->photo}}">
+
+                    </div>
+
+                </div>
+
+            </div>
+
             <div class="row">
 
                 <div class="col-md-4">
@@ -98,3 +114,4 @@
 
 
 
+@stop

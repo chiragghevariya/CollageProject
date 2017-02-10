@@ -23,6 +23,8 @@
                     <th>Semester</th>
                     <th>Spi</th>
                     <th>Result</th>
+                    <th>photo</th>
+                    <th>show</th>
                     <th>Edit</th>
                     <th>Delete</th>
 
@@ -35,6 +37,9 @@
                         <td>{{$result->semester}}</td>
                         <td>{{$result->spi}}</td>
                         <td>{{$result->pass_fail}}</td>
+                        <td><img width="40" height="40" src="{{url('Result/'.Auth::user()->id. '/images/'.$result->photo)}}"></td>
+                        <td><a class="btn btn-success" href="{{route('result.show',['id'=>$result->id])}}">Show</a></td>
+
                         <td><a class="btn btn-primary" href="{{route('result.edit',['id'=>$result->id])}}">Edit</a></td>
                         <td>
                             <form method="post" action="{{Route('result.destroy',['id'=>$result->id])}}">

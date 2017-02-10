@@ -20,6 +20,7 @@ class CreateResultsTable extends Migration
             $table->integer('semester');
             $table->float('spi');
             $table->string('pass_fail');
+            $table->string('photo');
             $table->timestamps();
         });
     }

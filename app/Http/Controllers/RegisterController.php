@@ -33,6 +33,8 @@ class RegisterController extends Controller
 
     public function studentRegister(Request $request){
 
+
+
         $this->validate($request,[
 
             'name' =>'required',
@@ -68,6 +70,7 @@ class RegisterController extends Controller
 
 
     public function facultyRegister(Request $request){
+
 
 
         $this->validate($request,[

@@ -17,9 +17,8 @@
 <body>
 
 
-                <div class="container">
 
-                    <nav class="navbar navbar-default navbar-fixed-top for-faculty">
+                    <nav class="navbar  for-faculty" style="background:#673AB7;">
 
 
                             <div class="navbar-header">
@@ -75,7 +74,6 @@
                     </nav>
 
 
-                </div>
 
                 @yield('content')
 

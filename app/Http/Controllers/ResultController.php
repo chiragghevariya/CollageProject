@@ -43,7 +43,19 @@ class ResultController extends Controller
             $result->semester =$request->semester;
             $result->spi =$request->spi;
             $result->pass_fail= $request->ps;
-            $result->save();
+
+        if($file =$request->file('photo')){
+
+            $name =time() .$file->getClientOriginalName();
+
+            $file->move('Result/'.Auth::user()->id.'/images',$name);
+
+            $result->photo =$name;
+        }
+
+
+
+        $result->save();
             return redirect()->route('result.index');
     }
 
@@ -55,7 +67,8 @@ class ResultController extends Controller
      */
     public function show($id)
     {
-        //
+       $result = Result::find($id);
+       return view('all-section.student.result.show',['result'=>$result]);
     }
 
     /**
@@ -86,6 +99,18 @@ class ResultController extends Controller
         $resulttt->semester =$request->semester;
         $resulttt->spi =$request->spi;
         $resulttt->pass_fail= $request->ps;
+
+        if($file =$request->file('photo')){
+
+            $name =time() .$file->getClientOriginalName();
+
+            $file->move('Result/'.Auth::user()->id.'/images',$name);
+
+            $resulttt->photo =$name;
+        }
+
+
+
         $resulttt->save();
         return redirect()->route('result.index');
 

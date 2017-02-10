@@ -9,7 +9,7 @@
 
 <div class="container">
 
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default" style="background:#311B92;">
 
         <div class="container">
 

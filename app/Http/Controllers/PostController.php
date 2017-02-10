@@ -42,6 +42,17 @@ class PostController extends Controller
         $post->user_id =Auth::user()->id;
         $post->title =$request->title;
         $post->description =$request->description;
+        $post->date =$request->date;
+
+        if($file =$request->file('photo')){
+
+            $name =time() .$file->getClientOriginalName();
+
+            $file->move('Post/'.Auth::user()->id.'/images',$name);
+
+            $post->photo =$name;
+        }
+
         $post->save();
         return redirect()->route('post.index');
 
@@ -55,7 +66,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('all-section.faculty.post.show',['post'=>$post]);
     }
 
     /**
@@ -83,6 +95,18 @@ class PostController extends Controller
         $postupdate->user_id =Auth::user()->id;
         $postupdate->title =$request->title;
         $postupdate->description =$request->description;
+        $postupdate->date =$request->date;
+
+        if($file =$request->file('photo')){
+
+            $name =time() .$file->getClientOriginalName();
+
+            $file->move('Post/'.Auth::user()->id.'/images',$name);
+
+            $postupdate->photo =$name;
+        }
+
+
         $postupdate->save();
         return redirect()->route('post.index');
 

@@ -6,25 +6,26 @@ body{
 
 .for-faculty{
 
-    background:#F8BBD0;
-    box-shadow: 1px 2px 3px #D1C4E9;
+    /*background:#F8BBD0;*/
+    background: #673AB7;
+    box-shadow: 1px 2px 3px #E3F2FD;
 }
 
 .for-faculty ul li a{
 
-    color:black;
+    color:white;
 }
 .for-faculty a{
 
-    color:black;
+    color:white;
 }
 
-.post-form{
+/*.post-form{*/
 
-    padding: 10em;
-}
+    /*padding: 10em;*/
+/*}*/
 .lecture-form{
-    padding: 10em;
+    padding: 5em;
 }
 
 

@@ -7,7 +7,7 @@
 
     <div class="department-form">
 
-        <form method="post" action="{{Route('result.store')}}">
+        <form method="post" action="{{Route('result.store')}}" enctype="multipart/form-data">
 
             {{csrf_field()}}
 
@@ -75,6 +75,23 @@
                 </div>
 
             </div>
+
+
+            <div class="row">
+
+                <div class="col-md-5">
+
+                    <div class="form-group">
+
+                        <label for="Title">Image:</label>
+                        <input type="file" name="photo" class="form-control">
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
             <div class="row">
 

@@ -14,7 +14,7 @@
 
         <div class="post-form">
 
-            <form method="post" action="{{route('post.update',['id'=>$post->id])}}">
+            <form method="post" action="{{route('post.update',['id'=>$post->id])}}" enctype="multipart/form-data">
 
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="put">
@@ -23,12 +23,39 @@
 
                 <div class="row">
 
-                    <div class="col-md-10">
+                    <div class="col-md-5">
 
                         <div class="form-group">
 
                             <label for="Title">Title:</label>
                             <input type="text" class="form-control" name="title" value="{{$post->title}}">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-5">
+
+                        <div class="form-group">
+
+                            <label for="Title">Date:</label>
+                            <input type="date" class="form-control" name="title" value="{{$post->date}}">
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-10">
+
+                        <div class="form-group">
+
+                            <label for="Title">Description:</label>
+                            <textarea class="form-control" rows="10" cols="20" name="description">{{$post->description}}</textarea>
 
                         </div>
 
@@ -42,9 +69,8 @@
 
                         <div class="form-group">
 
-                            <label for="Title">Add link ,images and text:</label>
-                            <textarea class="form-control" rows="20" cols="20" name="description" id="summernote-post">{{$post->description}}</textarea>
-
+                            <label for="Title">photo:</label>
+                            <input type="file" name="photo" class="form-control" value="{{url('Post/'.Auth::user()->id.'/images/'.$post->photo)}}">
                         </div>
 
                     </div>
@@ -57,22 +83,8 @@
 
             </form>
 
-
         </div>
 
-
-
-
     </div>
-
-
-    <script>
-        $(document).ready(function() {
-            $('#summernote-post').summernote();
-
-        });
-
-    </script>
-
 
 @stop

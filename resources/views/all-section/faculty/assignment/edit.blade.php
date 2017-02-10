@@ -7,7 +7,7 @@
     <div class="container">
 
 
-        <div style="margin-top: 5em">
+        <div >
 
             <a href="{{Route('assignment.index')}}" class="btn btn-primary pull-right"><span style="margin-right: 1em"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>Back</a>
 
