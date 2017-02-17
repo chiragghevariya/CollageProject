@@ -75,6 +75,8 @@ class User extends Authenticatable
 
 
 
+
+
     public static function UserRole($number){
 
         switch ($number){

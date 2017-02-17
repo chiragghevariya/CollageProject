@@ -5,7 +5,7 @@
 
             <div class="container">
 
-                <div style="width:40%;margin: auto">
+                <div style=" width:40%;margin: auto">
 
                     <div class="row">
 

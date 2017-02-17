@@ -15,6 +15,10 @@ Route::group(['prefix'=>'student','middleware'=>'is_student'],function (){
 
     Route::resource('submit','SubmissionController');
 
+    Route::get('fpost',['as'=>'student.post.index','uses'=>'StudentPostController@index']);
+
+    Route::resource('setting','StudentSettingController');
+
 });
 
 
