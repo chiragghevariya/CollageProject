@@ -19,6 +19,8 @@ Route::group(['prefix'=>'student','middleware'=>'is_student'],function (){
 
     Route::resource('setting','StudentSettingController');
 
+    Route::resource('studentprofile','StudentProfileController');
+
 });
 
 

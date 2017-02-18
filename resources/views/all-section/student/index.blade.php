@@ -4,6 +4,8 @@
     <title>@yield('title')</title>
     @include('layout.head')
     <link type="text/css" rel="stylesheet" href="{{asset('projectstylefile/stylefile/student.css')}}">
+
+    @yield('stylefile')
 </head>
 <body>
 
@@ -40,9 +42,26 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li><a href="{{route('setting.edit',['id'=>Auth::user()->id])}}" style="color:white"><span><i class="fa fa-cog" aria-hidden="true"></i></span>Setting</a></li>
-                    <li style=" margin-top: 1em;color: white"><span><img width="25" src="{{url('authenticate.png')}}"></span>Hi,{{Auth::user()->name}}</li>
-                    <li><a href="{{url('logout')}}" style="color:white;"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                    <li class="dropdown" style="margin-right: 2em">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <img width="30" class="img-responsive img-circle" src="{{url('Profile/'.Auth::user()->id.'/images/'.App\Profile::where('user_id',Auth::user()->id)->value('photo'))}}">
+                            </a>
+                        <ul class="dropdown-menu">
+
+
+                            <li><a href="{{route('studentprofile.index')}}" style="text-align: center"><span><i class="fa fa-user" aria-hidden="true"></i></span>Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{route('setting.edit',['id'=>Auth::user()->id])}}" style="text-align: center"><span><i class="fa fa-cog" aria-hidden="true"></i></span>Setting</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{url('logout')}}" style="text-align: center"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+
+
+                            {{--<li><a href="#">Page 1-1</a></li>--}}
+                            {{--<li><a href="#">Page 1-2</a></li>--}}
+                            {{--<li><a href="#">Page 1-3</a></li>--}}
+                        </ul>
+                    </li>
+
 
                 </ul>
 
