@@ -21,6 +21,7 @@ Route::group(['prefix'=>'faculty'],function (){
     Route::resource('assignment','AssignmentController');
     Route::resource('question','QuestionController');
     Route::resource('facultysetting','FacultySettingController');
+    Route::resource('facultyprofile','FacultyProfileController');
 
 
 

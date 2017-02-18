@@ -24,7 +24,13 @@
 
                     <input type="hidden" value="put" name="_method">
 
+                    <div class="row" style="margin: auto;width:40%;margin-bottom: 1em">
+                        <div class="col-md-6">
 
+                            <img height="85" width="60" class="img-responsive img-circle" src="{{url('Profile/'.Auth::user()->id.'/images/'.App\Profile::where('user_id',Auth::user()->id)->value('photo'))}}">
+
+                        </div>
+                    </div>
 
                             <div class="form-group">
 

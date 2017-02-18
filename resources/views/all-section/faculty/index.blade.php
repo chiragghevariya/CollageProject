@@ -13,6 +13,17 @@
     <link type="text/css" rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css')}}">
     <script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js')}}"></script>
 
+    @yield('stylefile')
+
+    <style type="text/css">
+
+        .right-img-menu{
+
+            background:#4527A0;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -62,9 +73,33 @@
                                 </ul>
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="{{route('facultysetting.edit',['id'=>Auth::user()->id])}}">setting</a></li>
-                                    <li style="margin-top: 1em;background:#E91E63">Hi,{{Auth::user()->name}}</li>
-                                    <li><a href="{{url('logout')}}">Logout</a></li>
+                                    {{--<li><a href="{{route('facultyprofile.index')}}"><span><i class="fa fa-user" aria-hidden="true"></i></span>Profile</a></li>--}}
+                                    {{--<li><a href="{{route('facultysetting.edit',['id'=>Auth::user()->id])}}"><span><i class="fa fa-cog" aria-hidden="true"></i></span>setting</a></li>--}}
+                                    {{--<li style="margin-top: 1em;background:#E91E63">Hi,{{Auth::user()->name}}</li>--}}
+                                    {{--<li><a href="{{url('logout')}}"><span class="glyphicon glyphicon-off"></span>Logout</a></li>--}}
+
+
+                                    <li class="dropdown" style="margin-right: 1em">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <img width="30" class="img-responsive img-circle" alt="set" src="{{url('Profile/'.Auth::user()->id.'/images/'.App\Profile::where('user_id',Auth::user()->id)->value('photo'))}}
+                                            ">
+                                        </a>
+                                        <ul class="dropdown-menu">
+
+
+                                            <li><a href="{{route('facultyprofile.index')}}" class="right-img-menu"><span><i class="fa fa-user" aria-hidden="true"></i></span>Profile</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="{{route('facultysetting.edit',['id'=>Auth::user()->id])}}" class="right-img-menu"><span><i class="fa fa-cog" aria-hidden="true"></i></span>setting</a></li>
+                                            <li class="divider"></li>
+                                            {{--<li style="margin-top: 1em;background:#E91E63">Hi,{{Auth::user()->name}}</li>--}}
+                                            <li><a href="{{url('logout')}}" class="right-img-menu"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+
+
+                                            {{--<li><a href="#">Page 1-1</a></li>--}}
+                                            {{--<li><a href="#">Page 1-2</a></li>--}}
+                                            {{--<li><a href="#">Page 1-3</a></li>--}}
+                                        </ul>
+                                    </li>
 
                                 </ul>
 
