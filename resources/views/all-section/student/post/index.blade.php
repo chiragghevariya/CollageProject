@@ -4,10 +4,14 @@
 
         <style type="text/css">
 
-            .panelbody{
+            .panelheading{
 
-                text-align: center;
-                font-size: large;
+
+
+            }
+            .profile-image{
+
+
             }
 
         </style>
@@ -23,18 +27,23 @@
         <div class="container">
 
 
-            <div style=" width:40%;margin: auto">
+
 
 
                 @foreach($post as $post)
 
                 <div class="row">
 
-                    <div class="col-md-12">
+                    <div class="panel panel-default">
 
-                        <div class="panel panel-success">
+                            <div class="panel-heading panelheading">
 
-                            <div class="panel-heading panelbody">{{$post->title}}</div>
+                                <img width="40" height="40"  src="{{url('Profile/'.$post->user_id.'/images/'.App\Profile::where('user_id',$post->user_id)->value('photo'))}}" alt="No" class="img-responsive img-circle profile-image">
+                                    {{App\User::Name($post->user_id)}}
+
+
+
+                            </div>
 
                             <div class="panel-body">
 
@@ -42,7 +51,7 @@
 
                                 <hr>
 
-                                <div style="text-align:center">{{$post->description}}</div>
+                                <div style=" text-align:center">{{$post->description}}</div>
 
                             </div>
 
@@ -58,14 +67,12 @@
 
                     </div>
 
-                </div>
 
             @endforeach
             </div>
 
 
 
-        </div>
 
 
      @stop
