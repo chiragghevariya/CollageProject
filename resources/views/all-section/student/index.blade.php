@@ -6,6 +6,19 @@
     <link type="text/css" rel="stylesheet" href="{{asset('projectstylefile/stylefile/student.css')}}">
 
     @yield('stylefile')
+
+    <style type="text/css">
+        .content {display:none;}
+        .preload {
+            width:100px;
+            height: 100px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+
+        }
+
+    </style>
 </head>
 <body>
 
@@ -74,7 +87,26 @@
 
 </div>
 
+<div class="preload">
+    <img src="http://i.imgur.com/KUJoe.gif">
+</div>
 
+<div class="content">
+
+</div>
+
+
+    <script type="text/javascript">
+
+        $(function() {
+            $(".preload").fadeOut(2000, function() {
+                $(".content").fadeIn(1000);
+            });
+        });
+
+
+    </script>
+<script type="text/javascript" src="{{asset('projectstylefile/js/jquery.min.js')}}"></script>
 
 @yield('content')
 

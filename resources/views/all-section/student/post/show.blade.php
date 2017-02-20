@@ -69,7 +69,7 @@
 
                         </div>
 
-
+                        <div style=" margin-left: 2em;margin-top: 1em"><b>{{$post->title}}</b></div>
                         <div class="post-description">{{$post->description}}</div>
 
 
@@ -92,14 +92,16 @@
                             <hr>
 
                             @foreach($comment as $comment)
-                                <div style="margin-bottom: 1em">
+                                <div style=" margin-bottom: 1em;overflow:hidden">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <img width="32" height="32" class="img img-circle" src="{{url('Profile/'.$comment->user_id.'/images/'.App\Profile::where('user_id',$comment->user_id)->value('photo'))}}">
+                                            <b>{{App\User::Name($comment->user_id)}}</b> {{$comment->comment}}
+                                            <div class="small" style=" margin-left: 3em">{{$comment->created_at->diffForHumans()}}</div>
 
-                                    <img width="32" height="32" class="img img-circle" src="{{url('Profile/'.$comment->user_id.'/images/'.App\Profile::where('user_id',$comment->user_id)->value('photo'))}}">
-                                    <b>{{App\User::Name($comment->user_id)}}</b>
-                                    {{$comment->comment}}<br>
-                                    <div class="small" style="margin-left: 3em">{{$comment->created_at->diffForHumans()}}</div>
 
-
+                                        </div>
+                                    </div>
                                 </div>
 
                                 @endforeach
@@ -128,19 +130,19 @@
 
                         <div class="row">
 
-                            <div class="col-sm-10">
+                            <div class="col-sm-12">
 
                                 <div class="form-group">
 
                                     <label for="Comment"><span><img width="35" src="{{url('Profile/'.Auth::user()->id.'/images/'.App\Profile::where('user_id',Auth::user()->id)->value('photo'))}}" alt="No" class="img-responsive img-circle profile-image"></span></label>
-                                    <textarea name="comment"  cols="50" row="4" style="margin-left: 10px" placeholder="Add comment"></textarea>
+                                    <textarea name="comment"  cols="63" row="4" style="margin-left: 10px" placeholder="Add comment"></textarea>
 
                                 </div>
 
 
                             </div>
 
-                            <div class="col-sm-2" style="margin-top: 1em;margin-left: 4em">
+                            <div class="col-sm-2" style="margin-top:3px;margin-left: 4em">
 
                                 <input  type="submit" value="comment"  class="btn btn-success">
 

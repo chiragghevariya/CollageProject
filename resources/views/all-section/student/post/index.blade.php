@@ -65,8 +65,9 @@
 
                     </div>
 
-
-                    <div class="post-description">{{$post->description}}</div>
+                    <div style=" margin-left: 2em;margin-top: 1em"><b>{{$post->title}}</b></div>
+                    <div class="post-description">~ {{$post->description}}</div>
+                    <hr>
 
 
                     <div class="panel-body">
@@ -80,7 +81,7 @@
                         <div class="row" style="text-align: center">
 
                             <div class="col-md-4"><span class="icon"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>Like</div>
-                            <div class="col-md-4"><a href="{{route('fpost.show',['id'=>$post->id])}}"><span class="icon"><i class="fa fa-comment" aria-hidden="true"></i></span>Comment</a></div>
+                            <div class="col-md-4"><a href="{{route('fpost.show',['id'=>$post->id])}}" target="_blank"><span class="icon"><i class="fa fa-comment" aria-hidden="true"></i></span>Comment</a></div>
                             <div class="col-md-4"><span class="icon"><i class="fa fa-share-alt" aria-hidden="true"></i></span>Share</div>
 
                         </div>

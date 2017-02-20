@@ -22,8 +22,27 @@
             background:#4527A0;
             text-align: center;
         }
+        nav ul li a{
+            color: white;
+        }
+
+        nav a{
+            color: white;
+        }
+
+        .content {display:none;}
+        .preload {
+            width:100px;
+            height: 100px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+
+        }
 
     </style>
+
+
 </head>
 <body>
 
@@ -108,6 +127,21 @@
 
                     </nav>
 
+                    <div class="content">
+
+                    </div>
+
+
+                    <script type="text/javascript">
+
+                        $(function() {
+                            $(".preload").fadeOut(2000, function() {
+                                $(".content").fadeIn(1000);
+                            });
+                        });
+
+
+                    </script>
 
 
                 @yield('content')

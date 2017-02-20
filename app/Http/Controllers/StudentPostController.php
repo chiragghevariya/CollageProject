@@ -12,7 +12,7 @@ class StudentPostController extends Controller
 {
     public function index(){
 
-        $post = Post::all();
+        $post = Post::orderBy('id', 'desc')->get();
         return view('all-section.student.post.index',['post'=>$post]);
     }
 
