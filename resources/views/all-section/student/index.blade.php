@@ -36,7 +36,7 @@
 
                     <li><a href="{{route('submit.index')}}" style="color:white;"><span><i class="fa fa-building-o" aria-hidden="true"></i></span>Assignment</a></li>
                     <li><a href="{{route('result.index')}}" style="color:white;"><span><i class="fa fa-building-o" aria-hidden="true"></i></span>Result</a></li>
-                    <li><a href="{{route('student.post.index')}}" style="color:white;"><span><i class="fa fa-building-o" aria-hidden="true"></i></span>Faculty Post</a></li>
+                    <li><a href="{{route('fpost.index')}}" style="color:white;"><span><i class="fa fa-building-o" aria-hidden="true"></i></span>Faculty Post</a></li>
 
                 </ul>
 
