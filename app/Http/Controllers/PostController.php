@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post =Post::auth()->get();
+        $post =Post::where('user_id',Auth::user()->id)->get();
         return view('all-section.faculty.post.index',['post'=>$post]);
     }
 

@@ -63,6 +63,7 @@ class User extends Authenticatable
 //    }
 
     public function scopeDepartment($query, $department_id)
+
     {
         return $query->where('department_id', $department_id)
             ->get();

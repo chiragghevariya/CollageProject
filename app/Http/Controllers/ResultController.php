@@ -16,7 +16,7 @@ class ResultController extends Controller
     public function index()
     {
         $result =Auth::user()->result()->get();
-      return view('all-section.student.result.index',['result'=>$result]);
+        return view('all-section.student.result.index',['result'=>$result]);
     }
 
     /**

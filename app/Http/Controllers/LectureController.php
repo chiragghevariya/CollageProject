@@ -27,7 +27,7 @@ class LectureController extends Controller
      */
     public function create()
     {
-        $subject =  Auth::user()->subjects()->get();
+        $subject =  Subject::where('user_id',Auth::user()->id)->get();
         return view('all-section.faculty.lecture.create',['subject'=>$subject]);
     }
 

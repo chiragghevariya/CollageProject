@@ -16,7 +16,7 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        $assignment =Assignment::auth()->get();
+        $assignment =Assignment::where('user_id',Auth::user()->id)->get();
         return view('all-section.faculty.assignment.index',['assignment'=>$assignment]);
     }
 
@@ -27,7 +27,7 @@ class AssignmentController extends Controller
      */
     public function create()
     {
-        $subject =  Auth::user()->subjects()->get();
+        $subject =  Subject::where('user_id',Auth::user()->id)->get();
         return view('all-section.faculty.assignment.create',['subject'=>$subject]);
     }
 
